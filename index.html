@@ -18,10 +18,10 @@
       <img src="src/img/perfil.jpeg" alt="Foto de Perfil">
     </div>
     <div class="social-links">
-      <a href="https://wa.me/+5511949920067" target="_blank" class="logo-link">
+      <a href="https://wa.me/+5511973034812" target="_blank" class="logo-link">
         <img src="src/img/whatsapp.png" alt="WhatsApp" class="logo-img whatsapp">
       </a>
-      <a href="https://www.instagram.com/_juliomendes/" target="_blank" class="logo-link">
+      <a href="https://instagram.com/drapatriciacicareli?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="logo-link">
         <img src="src/img/instagram.png" alt="Instagram" class="logo-img instagram">
       </a>
     </div>
@@ -37,7 +37,7 @@
     </div>
     <div id="map"></div>
     <address>
-      <p>Endereço: Rua Padre Raposo, 114 - Mooca - São Paulo-SP</p>
+      <p class="ende">Endereço: Rua Padre Raposo, 114 - Mooca - São Paulo-SP</p>
     </address>
     <footer>
       <p>&copy; 2023 Dra.Patricia Cicareli</p>
@@ -61,16 +61,18 @@
       });
       
       marker.addListener("click", function() {
-        if (isMobile()) {
-          window.location.href = "https://waze.com/ul?ll=-23.5642821,-46.5922225&navigate=yes"; // Abrir no Waze em dispositivos móveis
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+          const choice = confirm("Deseja abrir o endereço no Waze?");
+          if (choice) {
+            window.location.href = "waze://?q=Rua+Padre+Raposo+114,+Mooca,+São+Paulo-SP";
+          } else {
+            window.location.href = "https://www.google.com/search?q=rua+padre+raposo+1145+-+mooca&oq=rua+padre+raposo+1145+-+mooca&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGEDSAQgxNzA4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8";
+          }
         } else {
-          window.location.href = "https://www.google.com/maps/dir/?api=1&destination=-23.5642821,-46.5922225&travelmode=driving"; // Abrir no Google Maps em outros dispositivos
+          window.location.href = "https://www.google.com/maps/search/?api=1&query=Rua+Padre+Raposo+114,+Mooca,+São+Paulo-SP";
         }
       });
-    }
-
-    function isMobile() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-6Ly9GE6FVSzQFcY012qZ4XOJG55zobc&callback=initMap" async defer></script>
