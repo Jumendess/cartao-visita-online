@@ -61,8 +61,16 @@
       });
       
       marker.addListener("click", function() {
-        window.location.href = "https://www.google.com/search?q=rua+padre+raposo+1145+-+mooca&oq=rua+padre+raposo+1145+-+mooca&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGEDSAQgxNzA4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"; // URL do endereço
+        if (isMobile()) {
+          window.location.href = "https://waze.com/ul?ll=-23.5642821,-46.5922225&navigate=yes"; // Abrir no Waze em dispositivos móveis
+        } else {
+          window.location.href = "https://www.google.com/maps/dir/?api=1&destination=-23.5642821,-46.5922225&travelmode=driving"; // Abrir no Google Maps em outros dispositivos
+        }
       });
+    }
+
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-6Ly9GE6FVSzQFcY012qZ4XOJG55zobc&callback=initMap" async defer></script>
