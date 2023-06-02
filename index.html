@@ -18,10 +18,10 @@
       <img src="src/img/perfil.jpeg" alt="Foto de Perfil">
     </div>
     <div class="social-links">
-      <a href="https://wa.me/+5511973034812" target="_blank" class="logo-link">
+      <a href="https://wa.me/+5511949920067" target="_blank" class="logo-link">
         <img src="src/img/whatsapp.png" alt="WhatsApp" class="logo-img whatsapp">
       </a>
-      <a href="https://instagram.com/drapatriciacicareli?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="logo-link">
+      <a href="https://www.instagram.com/_juliomendes/" target="_blank" class="logo-link">
         <img src="src/img/instagram.png" alt="Instagram" class="logo-img instagram">
       </a>
     </div>
@@ -30,14 +30,14 @@
       <p>Olá! Sou Patricia Cicareli profissional apaixonada pelo campo da farmácia e estética. Sou graduada em Farmácia Bioquímica desde 2012, o que me proporcionou uma sólida base de conhecimento nas áreas farmacêutica.
         Além disso, busquei me aprimorar ainda mais e conquistei uma pós-graduação em Gestão Industrial Farmacêutica e Farmácia Estética. Essa experiência ampliou meu entendimento sobre os aspectos administrativos e industriais relacionados ao setor farmacêutico.
         Atualmente, atuo como farmacêutica estética, combinando meu conhecimento farmacêutico com técnicas e procedimentos estéticos. Meu objetivo é proporcionar aos meus pacientes uma experiência completa de cuidados estéticos, onde a saúde e o bem-estar são prioridades.
-        Acredito que cada indivíduo é único e merece tratamentos personalizados que atendam às suas necessidades específicas. Com base em minha formação e experiência, sou capaz de oferecer serviços estéticos seguros e eficazes, sempre buscando resultados naturais e duradouros.
-        Estou comprometida em proporcionar um ambiente acolhedor, onde meus pacientes se sintam confiantes e confortáveis durante seus tratamentos. Minha paixão pelo campo da farmácia estética impulsiona-me a estar sempre atualizada sobre as últimas tendências e avanços tecnológicos, garantindo assim os melhores resultados para meus pacientes.
+        Acredito que cada indivíduo é único e merece tratamentos personalizados que atendam às suas necessidades específicas. Com base em minha formação e experiência, sou capaz de oferecer serviços estéticos seguros e eficazes, sempre buscando resultados naturais e duradouros.        
+        Estou comprometida em proporcionar um ambiente acolhedor, onde meus pacientes se sintam confiantes e confortáveis durante seus tratamentos. Minha paixão pelo campo da farmácia estética impulsiona-me a estar sempre atualizada sobre as últimas tendências e avanços tecnológicos, garantindo assim os melhores resultados para meus pacientes.        
         Sinta-se à vontade para entrar em contato e agendar uma consulta. Estou ansiosa para ajudá-lo(a) a alcançar sua melhor versão e promover sua autoestima através dos cuidados estéticos e farmacêuticos personalizados.<br><br>
         Dra.Patricia Cicareli</p>
     </div>
     <div id="map"></div>
     <address>
-      <p class="ende">Endereço: Rua Padre Raposo, 114 - Mooca - São Paulo-SP</p>
+      <p>Endereço: Rua Padre Raposo, 114 - Mooca - São Paulo-SP</p>
     </address>
     <footer>
       <p>&copy; 2023 Dra.Patricia Cicareli</p>
@@ -48,23 +48,20 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script>
     function initMap() {
-      // Coordenadas da localização do consultório
-      var location = {lat: -23.5642821, lng: -46.5922225};
-
-      // Opções do mapa
-      var mapOptions = {
+      const location = { lat: -23.5642821, lng: -46.5922225 }; // Coordenadas do endereço
+      
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
         center: location,
-        zoom: 15
-      };
-
-      // Criação do mapa
-      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-      // Marcador da localização
-      var marker = new google.maps.Marker({
+      });
+      
+      const marker = new google.maps.Marker({
         position: location,
         map: map,
-        title: 'Consultório'
+      });
+      
+      marker.addListener("click", function() {
+        window.location.href = "https://www.google.com/search?q=rua+padre+raposo+1145+-+mooca&oq=rua+padre+raposo+1145+-+mooca&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGEDSAQgxNzA4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"; // URL do endereço
       });
     }
   </script>
