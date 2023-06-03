@@ -1,3 +1,21 @@
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+
 body {
   background-color: #fff;
   font-family: Arial, sans-serif;
@@ -42,6 +60,7 @@ header img.logo {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  
 }
 
 .social-links img {
@@ -73,13 +92,44 @@ footer {
   text-align: center;
 }
 
-@keyframes shake {
+/* @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
   50% { transform: translateX(0); }
   75% { transform: translateX(5px); }
   100% { transform: translateX(0); }
+} */
+
+li{
+  list-style: none;
+  text-align: center;
+  
 }
+ul{
+  text-align: center;
+}
+.linha{
+  background-color: black;
+  width: 50%;
+  justify-content: center;
+}
+
+
+.contact-section{
+  text-align: center;
+  font-family: 'Cardo', serif;
+  align-items: center;
+}
+
+.procedures-section {
+  text-align: center;
+  font-family: 'Cardo', serif;
+}
+
+.address-section{
+  text-align: center;
+}
+
 
 .ende{
   text-align: center;
